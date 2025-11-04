@@ -1,0 +1,116 @@
+# =========================
+# .NET MAUI / Visual Studio
+# =========================
+
+# Compilação
+bin/
+obj/
+out/
+
+# Configurações do usuário
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Arquivos de build do VS
+.vs/
+*.dbmdl
+*.dbproj.schemaview
+
+# Configurações locais
+launchSettings.json
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Logs
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.tmp
+
+# Cache de dependências
+*.cache
+*.msp
+*.msm
+*.msi
+*.pidb
+*.scc
+
+# Diretórios de build do MAUI
+**/Platforms/Android/obj/
+**/Platforms/Android/bin/
+**/Platforms/iOS/obj/
+**/Platforms/iOS/bin/
+**/Platforms/MacCatalyst/obj/
+**/Platforms/MacCatalyst/bin/
+**/Platforms/Windows/obj/
+**/Platforms/Windows/bin/
+
+# Arquivos gerados pelo MAUI
+Resources/Raw/generated/
+Resources/Fonts/*.ttf.*
+Resources/Fonts/*.otf.*
+
+# Android específicos
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.jar
+*.keystore
+*.key
+*.jks
+*.apks
+*.properties
+android/key.properties
+
+# iOS específicos
+*.dSYM/
+*.ipa
+*.xcuserstate
+*.xcuserdata/
+*.xcworkspace/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+
+# macOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Build do Rider/JetBrains
+.idea/
+*.iml
+
+# Arquivos temporários do sistema
+~$*
+*.swp
+*.bak
+*.old
+
+# Configurações de publicação
+*.pubxml
+*.publishsettings
+*.psess
+*.vsp
+*.vsix
+*.psess
+*.vspx
+*.coverage
+*.coveragexml
+
+# Outros caches e IDEs
+*.VSCodeCounter/
+.vscode/
+.vscode-test/
