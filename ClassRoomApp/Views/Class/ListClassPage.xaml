@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassRoomApp.Views.Class.ListClassPage"
+             Title="ListClassPage">
+
+    <Grid RowDefinitions=".9*, .1*">
+
+        <RoundRectangle CornerRadius="0, 0, 40, 40"/>
+
+        <Label Text="Tarefas concluídas"
+               HorizontalOptions="Center"
+               Margin="0, 10, 0, 0"/>
+
+        <VerticalStackLayout HorizontalOptions="CenterAndExpand" Margin="0, 40, 0, 0">
+            
+            <CollectionView VerticalOptions="Fill"
+                            ItemsSource="{Binding Items}"
+                            SelectionMode="Single"
+                            VerticalScrollBarVisibility="Always"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            x:Name="Todo">
+
+                <CollectionView.ItemTemplate>
+                    
+                    <DataTemplate>
+
+                        <Grid RowDefinitions=".6*, .4*"
+                              Padding="10,10,10,10">
+
+                            <RoundRectangle Grid.RowSpan="2"
+                                            CornerRadius="15"
+                                            x:Name="Classes">
+                                
+                            </RoundRectangle>
+
+                            <Grid RowDefinitions=".5*, .5*"
+                                  HorizontalOptions="CenterAndExpand"
+                                  VerticalOptions="CenterAndExpand">
+
+                                <VerticalStackLayout>
+
+                                    <Label Text="{Binding Text}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+
+                                    <Label Text="{Binding Text}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           Grid.Row="1"/>
+
+
+                                </VerticalStackLayout>
+                                
+                            </Grid>
+
+                        </Grid>
+                        
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+            
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1">
+
+            <Button Text="Nova Aula"
+                    Margin="10, 10, 10, 0"
+                    Command="{Binding RedirectCommand}"/>
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

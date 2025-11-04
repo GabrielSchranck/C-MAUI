@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassRoomApp.Views.Person.ListPersonPage"
+             Title="ListPersonPage">
+
+    <!--Define que o layout vai ter duas partes, uma que ocupa 90% da tela e outra 10%-->
+    <Grid RowDefinitions=".9*, .1*">
+        
+        <Label Text="Pessoas"
+               HorizontalTextAlignment="Center"/>
+
+        <!-- Os itens serão exibidos na vertival, caso eu não queria assim eu deixo sem essa opção -->
+        <VerticalStackLayout HorizontalOptions="CenterAndExpand" Margin="0, 40, 0, 0">
+            <!-- A collectionView é usado como uma lista -->
+            <CollectionView VerticalOptions="Fill"
+                             ItemsSource="{Binding Items}"
+                             SelectionMode="Single"
+                             VerticalScrollBarVisibility="Always"
+                             x:Name="Person"
+                             SelectionChanged="Person_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions=".6*, .4*" Padding="10, 10, 10, 0">
+                            <RoundRectangle Grid.RowSpan="2"
+                                            x:Name="Person">
+
+                            </RoundRectangle>
+
+                            <Grid RowDefinitions=".5*, .5*"
+                                  HorizontalOptions="CenterAndExpand"
+                                  VerticalOptions="CenterAndExpand"
+                                  HeightRequest="25">
+
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+
+                                    <Label Text="{Binding CompletAddress}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Button Text="Nova pessoa"
+                    Margin="10, 10, 10, 0"
+                    Command="{Binding RedirectCommand}"/>
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>

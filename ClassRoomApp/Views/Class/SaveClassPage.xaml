@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassRoomApp.Views.Class.SaveClassPage"
+             Title="SaveClassPage">
+
+    <Grid RowDefinitions=".9*, .1*">
+
+        <RoundRectangle CornerRadius="0, 0, 40, 40"/>
+
+        <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="StartAndExpand">
+
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+
+                <Label Text="Cadastro de Aula"
+                       Margin="0, 0, 0, 20"/>
+
+            </HorizontalStackLayout>
+
+            <Label Text="Aula"/>
+
+            <Entry Placeholder="Informe a aula"
+                   Text="{Binding Name}">
+                
+            </Entry>
+
+            <Label Text="Concluir"
+                   TextColor="White"/>
+            
+            <!--Bolinha que vai da direita a esquerda-->
+            <Switch IsToggled="{Binding Done}"
+                    HorizontalOptions="StartAndExpand"/>
+
+            <!--Combo box-->
+            <Picker Title="Selecione a pessoa"
+                    TitleColor="White"
+                    ItemsSource="{Binding Items}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelecttedItem}"
+                    x:Name="PersonPicker"
+                    TextColor="White"/>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1">
+
+            <Grid ColumnDefinitions="*,*,*">
+
+                <Button Text="Salvar"
+                        Margin="10, 10, 10, 10"
+                        Command="{Binding ExecuteCommand}"/>
+
+                <Button Text="Excluir"
+                        Margin="10, 10, 10, 0"
+                        Command="{Binding DeleteCommand}"
+                        Grid.Column="1"/>
+
+                <Button Text="Cancelar"
+                        Margin="10, 10, 10, 0"
+                        Command="{Binding RedirectCommand}"
+                        Grid.Column="2"/>
+                
+            </Grid>
+            
+        </VerticalStackLayout>
+
+    </Grid>
+    
+</ContentPage>

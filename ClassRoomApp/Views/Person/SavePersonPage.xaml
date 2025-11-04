@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassRoomApp.Views.Person.SavePersonPage"
+             Title="SavePersonPage">
+
+    <Grid RowDefinitions=".9*, .1*">
+        <RoundRectangle CornerRadius="0, 0, 40, 40"/>
+
+        <!--Linha 0 Grid.Row="0"-->        
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="StartAndExpand">
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                <Label Text="Cadastro de Tarefas"
+                       Margin="0, 0, 0, 20"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Text"/>
+
+            <Entry Placeholder="Informe o nome"
+                   Text="{Binding Name}">
+                
+            </Entry>
+
+            <Label Text="Address"/>
+
+            <Entry Placeholder="Informe o endereço"
+                   Text="{Binding CompleteAddress}">
+                 
+            </Entry>
+
+        </VerticalStackLayout>
+
+        <!--Linha 0 Grid.Row="1"-->
+        <VerticalStackLayout Grid.Row="1">
+
+            <!--Vai dividir o grid igualmente-->
+            <Grid ColumnDefinitions="*,*,*">
+                <Button Text="Salvar"
+                        Command="{Binding ExecutarCommand}"
+                        Margin="10,10,10,0"/>
+
+                <Button Text="Excluir"
+                        Command="{Binding DeleteCommand}"
+                        Margin="10,10,10,0"
+                        Grid.Column="1"/>
+
+                <Button Text="Cancelar"
+                        Command="{Binding CancelarCommand}"
+                        Margin="10,10,10,0"
+                        Grid.Column="2"/>
+            </Grid>
+            
+        </VerticalStackLayout>
+    </Grid>
+    
+</ContentPage>
